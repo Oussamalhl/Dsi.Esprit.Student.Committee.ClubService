@@ -93,7 +93,7 @@ public class clubServiceController {
     @GetMapping("/showCId")
     public Long showClubId(@Valid @RequestParam String name) {
 
-        return clubservice.getUserClubId(name);
+        return clubservice.showClubId(name);
 
     }
     @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
