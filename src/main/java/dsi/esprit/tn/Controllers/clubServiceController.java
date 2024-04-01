@@ -89,6 +89,20 @@ public class clubServiceController {
         return clubservice.showClub(idClub);
 
     }
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    @GetMapping("/showCId")
+    public Long showClubId(@Valid @RequestParam String name) {
+
+        return clubservice.getUserClubId(name);
+
+    }
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    @GetMapping("/showAllCNames")
+    public List<String> getAllClubNames() {
+
+        return clubservice.getAllClubNames();
+
+    }
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/showClubU")
     public List<Object[]> getClubUsers(@Valid @RequestParam long idClub) {
@@ -141,6 +155,11 @@ public class clubServiceController {
     @GetMapping("/countAll")
     public Integer countAllClubs() {
         return clubservice.countAllClubs();
+    }
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @GetMapping("/countClEv")
+    public Integer countClubEvents(@RequestParam("idClub") Long idClub) {
+        return clubservice.countClubEvents(idClub);
     }
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/countAllPart")

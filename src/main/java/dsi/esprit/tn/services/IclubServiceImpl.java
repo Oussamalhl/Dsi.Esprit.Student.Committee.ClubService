@@ -11,8 +11,11 @@ public interface IclubServiceImpl {
     Club updateClub(Club club);
     List<Club> showAllClubs();
     Club showClub(Long idClub);
+    Long showClubId(String name);
+    List<String> getAllClubNames();
     List<Object[]> bestClubEvents(Long idClub);
     Integer countAllClubs();
+    Integer countClubEvents(Long idClub);
     Integer countAllClubsParticipations();
     Integer countClubParticipations(Long idClub);
     List<Object[]> countAllClubsByType();

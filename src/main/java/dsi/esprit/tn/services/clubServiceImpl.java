@@ -50,8 +50,17 @@ public class clubServiceImpl implements IclubServiceImpl {
     }
 
     @Override
+    public List<String> getAllClubNames() {
+        return clubRepository.getAllClubNames();
+    }
+    @Override
     public Club showClub(Long idClub) {
         return clubRepository.findById(idClub).orElse(null);
+
+    }
+    @Override
+    public Long showClubId(String name) {
+        return clubRepository.getClubId(name);
 
     }
     @Override
@@ -80,6 +89,10 @@ public class clubServiceImpl implements IclubServiceImpl {
     @Override
     public Integer countAllClubs(){
         return clubRepository.countAllClubs();
+    }
+    @Override
+    public Integer countClubEvents(Long idClub){
+        return clubRepository.countClubEvents(idClub);
     }
     @Override
     public Integer countAllClubsParticipations(){

@@ -30,6 +30,12 @@ public interface clubRepository extends JpaRepository<Club, Long> {
     @Query(value = "select clubs.* from users inner join clubs on users.club_id=clubs.id where users.username=?1",
             nativeQuery = true)
     Club getUserClub(String username);
+    @Query(value = "select name from clubs",
+            nativeQuery = true)
+    List<String> getAllClubNames();
+    @Query(value = "select clubs.id from clubs where name=?1",
+            nativeQuery = true)
+    Long getClubId(String name);
     @Query(value = "select clubs.id from users inner join clubs on users.club_id=clubs.id where users.username=?1",
             nativeQuery = true)
     Long getUserClubId(String username);
@@ -44,6 +50,9 @@ public interface clubRepository extends JpaRepository<Club, Long> {
             "order by avg(user_events.Rating) desc",
             nativeQuery = true)
     List<Object[]> bestClubEvents(Long club_id);
+    @Query(value = "select count(*) from club_events where club_id=?1",
+            nativeQuery = true)
+    Integer countClubEvents(Long club_id);
     @Query(value = "SELECT COUNT(*) FROM clubs", nativeQuery = true)
     Integer countAllClubs();
     @Query(value = "SELECT COUNT(*) FROM users WHERE club_id IS NOT NULL", nativeQuery = true)
