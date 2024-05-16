@@ -1,13 +1,16 @@
 package dsi.esprit.tn.Controllers;
 
 import dsi.esprit.tn.Models.Club;
+import dsi.esprit.tn.Models.clubFile;
 import dsi.esprit.tn.repository.clubRepository;
 import dsi.esprit.tn.security.jwt.JwtUtils;
+import dsi.esprit.tn.services.IclubFileService;
 import dsi.esprit.tn.services.IclubServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
@@ -22,6 +25,9 @@ public class clubServiceController {
 
     @Autowired
     clubRepository clubRepository;
+
+    @Autowired
+    IclubFileService ICFS;
 
     @Autowired
     private JwtUtils jwtUtils;
@@ -90,6 +96,13 @@ public class clubServiceController {
 
     }
     @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    @GetMapping("/getClubByName")
+    public Club showClubByName(@Valid @RequestParam String name) {
+
+        return clubservice.getClubByName(name);
+
+    }
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
     @GetMapping("/showCId")
     public Long showClubId(@Valid @RequestParam String name) {
 
@@ -146,6 +159,11 @@ public class clubServiceController {
     public List<Object[]> bestClubEvents(@RequestParam("idClub") Long idClub) {
         return clubservice.bestClubEvents(idClub);
     }
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER') or hasRole('ROLE_MODERATOR')")
+    @GetMapping("/bestclubs")
+    public List<Object[]> bestClubs() {
+        return clubservice.bestClubs();
+    }
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/topClPart")
     public List<Object[]> topClubParticipations() {
@@ -180,6 +198,30 @@ public class clubServiceController {
     @GetMapping("/countClStatus")
     public List<Object[]> countAllClubsByStatus() {
         return clubservice.countAllClubsByStatus();
+    }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_MODERATOR')")
+    @PostMapping(path = "/addFile/{id}")
+    public clubFile addFile(@PathVariable("id") long id, @RequestParam("file") MultipartFile file) {
+        return ICFS.addFile(file, id);
+    }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    @DeleteMapping("/deleteFile/{File}")
+    public void deleteFile(@PathVariable("File") Long File) {
+        ICFS.removeFile(File);
+    }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_USER')")
+    @GetMapping("/getFiles/{id}")
+    public List<clubFile> EventFiles(@PathVariable("id") Long id) {
+        return ICFS.GetclubFiles(id);
+    }
+
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @GetMapping("/getAllFiles")
+    public List<clubFile> EventAllFiles() {
+        return ICFS.findAll();
     }
 
 }

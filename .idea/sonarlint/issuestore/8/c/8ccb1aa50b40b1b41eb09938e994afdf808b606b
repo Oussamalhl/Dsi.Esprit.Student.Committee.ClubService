@@ -1,0 +1,13 @@
+
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆØĞıÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ–şç
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ä—‘Ùÿÿÿÿÿ
+e	java:S1176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷°é%
+r	java:S117@"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀåÉíüÿÿÿÿ8ğâ§ø1
+k	java:S114"QRename this interface name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.( ìøïÿÿÿÿÿ
+h	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆØĞıÿÿÿÿ
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÙîÄ­
+c	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Œ–şç
+V	java:S125-"<This block of commented-out lines of code should be removed.(·¿‡½şÿÿÿÿ
+i
+java:S1128"LRemove this unused import 'org.springframework.data.repository.query.Param'.(©”šô8ŸÌ©ø1

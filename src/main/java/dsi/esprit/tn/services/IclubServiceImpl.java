@@ -10,10 +10,12 @@ public interface IclubServiceImpl {
     void DeleteClubUsers(long idClub);
     Club updateClub(Club club);
     List<Club> showAllClubs();
+    Club getClubByName(String name);
     Club showClub(Long idClub);
     Long showClubId(String name);
     List<String> getAllClubNames();
     List<Object[]> bestClubEvents(Long idClub);
+    List<Object[]> bestClubs();
     Integer countAllClubs();
     Integer countClubEvents(Long idClub);
     Integer countAllClubsParticipations();

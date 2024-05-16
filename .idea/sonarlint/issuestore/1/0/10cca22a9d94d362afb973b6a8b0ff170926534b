@@ -1,0 +1,17 @@
+
+e	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€Ñ…j
+l	java:S117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É»”’üÿÿÿÿ
+g	java:S117Ó"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(þ¥œä
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÝÀûÐ
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Àãþüÿÿÿÿ
+d	java:S116"ORename this field "ICFS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ø¿þÂ
+U
+java:S4684>"@Replace this persistent entity with a simple POJO or DTO object.(€Ñ…j
+c	java:S100C"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù¼ÎŠ
+h	java:S100H"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ýé³Êþÿÿÿÿ
+A
+java:S1452M"&Remove usage of generic wildcard type.(´è”´ûÿÿÿÿ
+\
+java:S4684—"@Replace this persistent entity with a simple POJO or DTO object.(É»”’üÿÿÿÿ
+i	java:S100Ù"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ð©æÂùÿÿÿÿ
+i	java:S100ß"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨†Óáùÿÿÿÿ

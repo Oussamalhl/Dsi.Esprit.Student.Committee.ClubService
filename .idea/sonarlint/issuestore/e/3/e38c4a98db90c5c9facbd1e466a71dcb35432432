@@ -1,14 +1,14 @@
 
 {
-java:S2293;"YReplace the type specification in this constructor call with the diamond operator ("<>").(Û˜Ö—ùÿÿÿÿ8óÙ²„è1
-n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ó×”„ûÿÿÿÿ8ôÙ²„è1
+java:S2293<"YReplace the type specification in this constructor call with the diamond operator ("<>").(Û˜Ö—ùÿÿÿÿ8óÙ²„è1
+n	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ó×”„ûÿÿÿÿ8ôÙ²„è1
 Y
-java:S4973="<Strings and Boxed types should be compared using "equals()".(±Õ™á8õÙ²„è1
-o	java:S116"NRename this field "IES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‡Ñüúÿÿÿÿ8™Ú²„è1
-X	java:S125"<This block of commented-out lines of code should be removed.(÷‘²8£Ú²„è1
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ÀÅÔûÿÿÿÿ8¨Ú²„è1
-X	java:S125"<This block of commented-out lines of code should be removed.(Î´ƒ8¨Ú²„è1
-U	java:S106#"9Replace this use of System.out or System.err by a logger.(¥Æ•Ì8¬Ú²„è1
+java:S4973>"<Strings and Boxed types should be compared using "equals()".(±Õ™á8õÙ²„è1
+o	java:S116"NRename this field "IES" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(­‡Ñüúÿÿÿÿ8™Ú²„è1
+X	java:S125"<This block of commented-out lines of code should be removed.(÷‘²8£Ú²„è1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ÀÅÔûÿÿÿÿ8¨Ú²„è1
+X	java:S125"<This block of commented-out lines of code should be removed.(Î´ƒ8¨Ú²„è1
+U	java:S106$"9Replace this use of System.out or System.err by a logger.(¥Æ•Ì8¬Ú²„è1
 F
-java:S1940+")Use the opposite operator ("!=") instead.(´î…Á8¯Ú²„è1
-Z	java:S106/"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ8°Ú²„è1
+java:S1940,")Use the opposite operator ("!=") instead.(´î…Á8¯Ú²„è1
+Z	java:S1060"9Replace this use of System.out or System.err by a logger.(¨¶ÑÍþÿÿÿÿ8°Ú²„è1

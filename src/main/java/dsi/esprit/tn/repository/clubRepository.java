@@ -26,7 +26,8 @@ public interface clubRepository extends JpaRepository<Club, Long> {
     void DeleteClubUsers(Long club_id);
     @Query(value = "SELECT * FROM users WHERE club_id=?1", nativeQuery = true)
     List<Object[]> getClubUsers(Long club_id);
-
+    @Query(value = "SELECT * FROM clubs WHERE name=?1", nativeQuery = true)
+    Club getClubByName(String name);
     @Query(value = "select clubs.* from users inner join clubs on users.club_id=clubs.id where users.username=?1",
             nativeQuery = true)
     Club getUserClub(String username);
@@ -44,12 +45,20 @@ public interface clubRepository extends JpaRepository<Club, Long> {
 //    List<Integer[]> bestClubEventsOfAllTime();
 
     @Query(value = "select avg(user_events.Rating),name from user_events " +
-            "inner join club_events on club_events.event_id = user_events.event_id inner join events on events.id = club_events.event_id " +
+            "inner join club_events on club_events.event_id = user_events.event_id " +
+            "inner join events on events.id = club_events.event_id " +
             "where club_events.club_id=?1 " +
             "group by user_events.event_id " +
             "order by avg(user_events.Rating) desc",
             nativeQuery = true)
     List<Object[]> bestClubEvents(Long club_id);
+    @Query(value = "select avg(user_events.Rating),name from user_events " +
+            "inner join club_events on club_events.event_id = user_events.event_id " +
+            "inner join clubs on clubs.id = club_events.club_id " +
+            "group by clubs.id " +
+            "order by avg(user_events.Rating) desc",
+            nativeQuery = true)
+    List<Object[]> bestClubs();
     @Query(value = "select count(*) from club_events where club_id=?1",
             nativeQuery = true)
     Integer countClubEvents(Long club_id);
